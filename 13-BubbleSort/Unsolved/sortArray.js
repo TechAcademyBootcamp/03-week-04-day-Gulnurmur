@@ -67,3 +67,32 @@ var unsortedArr = [
   292, 332, 209, 244, 196, 179, 472, 279, 40, 486, 270, 185,
   181, 485, 495, 81, 169, 294, 79, 400, 92, 104, 249
 ];
+function swap(arr, first_Index, second_Index){
+  var temp = arr[first_Index];
+  arr[first_Index] = arr[second_Index];
+  arr[second_Index] = temp;
+}
+
+function bubble_Sort(arr){
+
+  var len = arr.length,
+      i, j, stop;
+
+  for (i=0; i < len; i++){
+      for (j=0, stop=len-i; j < stop; j++){
+          if (arr[j] > arr[j+1]){
+              swap(arr, j, j+1);
+          }
+      }
+  }
+
+  return arr;
+}
+document.getElementById("start").innerHTML=unsortedArr;
+function basla (){
+document.getElementById("result").innerHTML=bubble_Sort(unsortedArr);
+};
+
+
+
+
